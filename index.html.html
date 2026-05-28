@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>يمودا | أزياء عالمية بين يديك</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #E8184A;
+    --rose-dark: #c0103a;
+    --rose-light: #ff4d77;
+    --gold: #D4A843;
+    --cream: #FFF8F0;
+    --dark: #1a0a0f;
+    --mid: #3d1a24;
+    --text: #2d1018;
+    --gray: #8a7070;
+    --light-pink: #fde8ef;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: var(--dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(232,24,74,0.3);
+  }
+
+  .top-bar {
+    background: var(--rose);
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    animation: pulse-bg 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-bg {
+    0%, 100% { background: var(--rose); }
+    50% { background: var(--rose-dark); }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    gap: 20px;
+  }
+
+  .logo {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .logo span { color: var(--gold); }
+  .logo .dot {
+    width: 8px; height: 8px;
+    background: var(--rose);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .search-bar {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .search-bar:focus-within {
+    background: white;
+    border-color: var(--rose);
+    box-shadow: 0 0 0 3px rgba(232,24,74,0.15);
+  }
+
+  .search-bar input {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    color: white;
+    outline: none;
+    text-align: right;
+  }
+
+  .search-bar:focus-within input { color: var(--text); }
+  .search-bar input::placeholder { color: rgba(255,255,255,0.5); }
+  .search-bar:focus-within input::placeholder { color: var(--gray); }
+
+  .search-bar button {
+    padding: 10px 20px;
+    background: var(--rose);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+  }
+
+  .search-bar button:hover { background: var(--rose-dark); }
+
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-icon {
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+
+  .nav-icon:hover { color: var(--gold); }
+
+  .badge {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    background: var(--rose);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    background: var(--mid);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .nav-menu a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%; right: 50%;
+    height: 2px;
+    background: var(--rose);
+    transition: all 0.3s;
+  }
+
+  .nav-menu a:hover { color: white; }
+  .nav-menu a:hover::after { left: 0; right: 0; }
+  .nav-menu a.active { color: var(--gold); }
+  .nav-menu a.active::after { left: 0; right: 0; background: var(--gold); }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--dark) 0%, #3d0a1a 50%, #1a0520 100%);
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(232,24,74,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(212,168,67,0.1) 0%, transparent 40%);
+  }
+
+  .hero-circles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .hero-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(232,24,74,0.2);
+    animation: spin-slow linear infinite;
+  }
+
+  .hero-circle:nth-child(1) { width: 400px; height: 400px; top: -100px; left: -100px; animation-duration: 20s; }
+  .hero-circle:nth-child(2) { width: 250px; height: 250px; top: 50px; left: 200px; animation-duration: 15s; animation-direction: reverse; border-color: rgba(212,168,67,0.15); }
+  .hero-circle:nth-child(3) { width: 600px; height: 600px; bottom: -200px; right: -100px; animation-duration: 30s; border-color: rgba(232,24,74,0.1); }
+
+  @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    max-width: 600px;
+    animation: fadeInRight 0.8s ease-out;
+  }
+
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(232,24,74,0.2);
+    border: 1px solid rgba(232,24,74,0.4);
+    color: var(--rose-light);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.7);
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--rose);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .btn-primary:hover {
+    background: var(--rose-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(232,24,74,0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-secondary:hover {
+    border-color: white;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .hero-badges {
+    position: absolute;
+    left: 80px;
+    bottom: 40px;
+    display: flex;
+    gap: 16px;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 10px 18px;
+    border-radius: 12px;
+    color: white;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-badge .icon { font-size: 18px; }
+
+  /* ===== STATS ===== */
+  .stats {
+    background: var(--dark);
+    padding: 28px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .stat {
+    text-align: center;
+    color: white;
+  }
+
+  .stat-num {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gold);
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 2px;
+  }
+
+  /* ===== CATEGORIES ===== */
+  .section {
+    padding: 60px 40px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--dark);
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--rose);
+    margin-top: 6px;
+    border-radius: 2px;
+  }
+
+  .see-all {
+    color: var(--rose);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s;
+  }
+
+  .see-all:hover { gap: 8px; }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+  }
+
+  .cat-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    padding: 24px 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    text-decoration: none;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--rose);
+    box-shadow: 0 12px 30px rgba(232,24,74,0.15);
+  }
+
+  .cat-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    background: var(--light-pink);
+    transition: all 0.3s;
+  }
+
+  .cat-card:hover .cat-icon {
+    background: var(--rose);
+  }
+
+  .cat-name {
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  /* ===== PRODUCTS ===== */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  }
+
+  .product-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    background: linear-gradient(135deg, #fde8ef, #f5d0dc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-img-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-img-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .product-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--rose);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .product-badge.new { background: #22c55e; }
+  .product-badge.hot { background: #f97316; }
+
+  .product-wishlist {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 34px;
+    height: 34px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+  }
+
+  .product-wishlist:hover { transform: scale(1.1); color: var(--rose); }
+
+  .product-info {
+    padding: 16px;
+  }
+
+  .product-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .product-price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .product-price {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--rose);
+  }
+
+  .product-old-price {
+    font-size: 13px;
+    color: var(--gray);
+    text-decoration: line-through;
+  }
+
+  .product-discount {
+    background: #fef3c7;
+    color: #d97706;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+
+  .stars {
+    color: var(--gold);
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .add-to-cart {
+    width: 100%;
+    padding: 10px;
+    background: var(--rose);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .add-to-cart:hover { background: var(--rose-dark); }
+
+  /* ===== BANNER ===== */
+  .banner {
+    margin: 0 40px 60px;
+    background: linear-gradient(135deg, var(--dark), #3d0a1a);
+    border-radius: 24px;
+    padding: 50px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(232,24,74,0.15);
+    top: -100px; left: -50px;
+  }
+
+  .banner-content { position: relative; z-index: 1; }
+
+  .banner h2 {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .banner p { color: rgba(255,255,255,0.7); font-size: 16px; margin-bottom: 24px; }
+
+  .countdown {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .count-box {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-align: center;
+    min-width: 70px;
+  }
+
+  .count-num {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--gold);
+    display: block;
+  }
+
+  .count-label { font-size: 11px; color: rgba(255,255,255,0.6); }
+  .count-sep { color: var(--gold); font-size: 28px; font-weight: 800; }
+
+  /* ===== HOW IT WORKS ===== */
+  .how-it-works {
+    background: var(--dark);
+    padding: 60px 40px;
+  }
+
+  .how-it-works .section-title { color: white; }
+  .how-it-works .section-title::after { background: var(--gold); }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    position: relative;
+  }
+
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 35px;
+    right: 12%;
+    left: 12%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--rose) 0, var(--rose) 8px, transparent 8px, transparent 16px);
+  }
+
+  .step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num {
+    width: 70px;
+    height: 70px;
+    background: var(--rose);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    margin: 0 auto 16px;
+    box-shadow: 0 0 0 6px rgba(232,24,74,0.2);
+  }
+
+  .step h3 { color: white; font-size: 16px; margin-bottom: 8px; }
+  .step p { color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.6; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #0d0508;
+    padding: 50px 40px 24px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand .logo { color: white; font-size: 22px; margin-bottom: 16px; display: flex; }
+  .footer-brand p { font-size: 13px; line-height: 1.8; margin-bottom: 20px; }
+
+  .social-links { display: flex; gap: 12px; }
+
+  .social-link {
+    width: 38px; height: 38px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: white;
+  }
+
+  .social-link:hover { background: var(--rose); }
+
+  .footer-col h4 {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--rose-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: #25D366;
+    color: white;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    cursor: pointer;
+    z-index: 999;
+    animation: float 3s ease-in-out infinite;
+    text-decoration: none;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  /* ===== CART MODAL ===== */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-overlay.active { display: flex; }
+
+  .order-modal {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 480px;
+    width: 90%;
+    animation: slideUp 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .modal-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: var(--mid);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e8d5da;
+    border-radius: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    text-align: right;
+    color: var(--text);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--rose);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .payment-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .payment-option {
+    border: 2px solid #e8d5da;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .payment-option.selected {
+    border-color: var(--rose);
+    background: var(--light-pink);
+    color: var(--rose);
+  }
+
+  .modal-footer {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .btn-cancel {
+    flex: 1;
+    padding: 12px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--gray);
+  }
+
+  .success-msg {
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .success-msg .icon { font-size: 60px; margin-bottom: 16px; }
+  .success-msg h3 { font-size: 22px; font-weight: 800; color: #22c55e; margin-bottom: 8px; }
+  .success-msg p { color: var(--gray); font-size: 14px; line-height: 1.7; }
+
+  /* PRODUCTS BG COLORS */
+  .bg1 { background: linear-gradient(135deg, #fce7f3, #f3e8ff); }
+  .bg2 { background: linear-gradient(135deg, #e0f2fe, #dbeafe); }
+  .bg3 { background: linear-gradient(135deg, #fef3c7, #fde8d0); }
+  .bg4 { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
+  .bg5 { background: linear-gradient(135deg, #ffe4e6, #ffc0cb); }
+  .bg6 { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); }
+  .bg7 { background: linear-gradient(135deg, #fef9c3, #fde68a); }
+  .bg8 { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  🚀 شحن لجميع محافظات اليمن | واتساب: 967-XXX-XXXX
+</div>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="#" class="logo">يمودا</a>
+    <div class="search-bar">
+      <input type="text" placeholder="ابحث عن منتج..." id="searchInput">
+      <button>🔍</button>
+    </div>
+    <div class="nav-icons">
+      <a href="#" class="nav-icon">🤍
+        <span class="badge">3</span>
+      </a>
+      <a href="#" class="nav-icon" onclick="openModal()">🛒
+        <span class="badge">2</span>
+      </a>
+      <a href="#" class="nav-icon">👤</a>
+    </div>
+  </nav>
+  <div class="nav-menu">
+    <a href="#" class="active">الرئيسية</a>
+    <a href="#">ملابس نساء</a>
+    <a href="#">ملابس رجال</a>
+    <a href="#">أطفال</a>
+    <a href="#">إكسسوارات</a>
+    <a href="#">عروض</a>
+    <a href="#">جديد</a>
+    <a href="#">تتبع طلبك</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-circles">
+    <div class="hero-circle"></div>
+    <div class="hero-circle"></div>
+    <div class="hero-circle"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">✨ يمودا | موضة 2025 وصلت!</div>
+    <h1>موضة <em>عالمية</em><br>تصلك في اليمن</h1>
+    <p>أحدث الموضات العالمية بأسعار لا تصدق<br>توصيل لجميع المحافظات </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">🛍️ تسوق الآن</a>
+      <a href="#how" class="btn-secondary">كيف يعمل؟</a>
+    </div>
+  </div>
+  <div class="hero-badges">
+    <div class="hero-badge"><span class="icon">🚚</span> توصيل لليمن</div>
+    <div class="hero-badge"><span class="icon">💳</span> دفع آمن</div>
+    <div class="hero-badge"><span class="icon">↩️</span> استرجاع ٧ أيام</div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">+2000</div>
+    <div class="stat-label">منتج متاح</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">+500</div>
+    <div class="stat-label">عميل سعيد</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">21</div>
+    <div class="stat-label">محافظة يمنية</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">%30</div>
+    <div class="stat-label">توفير مقارنة بالسوق</div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">تسوق حسب الفئة</h2>
+    <a href="#" class="see-all">عرض الكل ←</a>
+  </div>
+  <div class="categories-grid">
+    <a href="#" class="cat-card">
+      <div class="cat-icon">👗</div>
+      <span class="cat-name">ملابس نساء</span>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">👔</div>
+      <span class="cat-name">ملابس رجال</span>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">👶</div>
+      <span class="cat-name">أطفال</span>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">👜</div>
+      <span class="cat-name">شنط وحقائب</span>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">💄</div>
+      <span class="cat-name">جمال وعناية</span>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">👟</div>
+      <span class="cat-name">أحذية</span>
+    </a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products" style="padding-top:0">
+  <div class="section-header">
+    <h2 class="section-title">المنتجات الأكثر طلباً</h2>
+    <a href="#" class="see-all">عرض الكل ←</a>
+  </div>
+  <div class="products-grid" id="productsGrid">
+    <!-- Products inserted by JS -->
+  </div>
+</section>
+
+<!-- SALE BANNER -->
+<div class="banner">
+  <div class="banner-content">
+    <h2>🔥 تخفيضات نهاية الموسم</h2>
+    <p>خصومات تصل إلى ٧٠٪ على أكثر من ٥٠٠ منتج</p>
+    <a href="#" class="btn-primary">اشتري الآن →</a>
+  </div>
+  <div class="countdown">
+    <div class="count-box">
+      <span class="count-num" id="hours">08</span>
+      <span class="count-label">ساعات</span>
+    </div>
+    <span class="count-sep">:</span>
+    <div class="count-box">
+      <span class="count-num" id="mins">34</span>
+      <span class="count-label">دقائق</span>
+    </div>
+    <span class="count-sep">:</span>
+    <div class="count-box">
+      <span class="count-num" id="secs">22</span>
+      <span class="count-label">ثواني</span>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how">
+  <h2 class="section-title">كيف يعمل المتجر؟</h2>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">١</div>
+      <h3>اختر منتجك</h3>
+      <p>تصفح آلاف المنتجات من Shein وأضف ما تريد للسلة</p>
+    </div>
+    <div class="step">
+      <div class="step-num">٢</div>
+      <h3>أرسل طلبك</h3>
+      <p>أكمل بياناتك واختر طريقة الدفع المناسبة لك</p>
+    </div>
+    <div class="step">
+      <div class="step-num">٣</div>
+      <h3>نطلب لك</h3>
+      <p>نقوم بالطلب من Shein مباشرة باسمك وبأفضل سعر</p>
+    </div>
+    <div class="step">
+      <div class="step-num">٤</div>
+      <h3>يصلك البضاعة</h3>
+      <p>توصيل لبابك في جميع محافظات اليمن خلال ٣-٦ أسابيع</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">يمودا</a>
+      <p>يمودا وسيطك الموثوق لجلب أحدث صيحات الموضة العالمية مباشرة إلى اليمن بأفضل الأسعار.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">📘</a>
+        <a href="#" class="social-link">📸</a>
+        <a href="#" class="social-link">💬</a>
+        <a href="#" class="social-link">🐦</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="#">من نحن</a></li>
+        <li><a href="#">المنتجات</a></li>
+        <li><a href="#">العروض</a></li>
+        <li><a href="#">تتبع الطلب</a></li>
+        <li><a href="#">تواصل معنا</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>سياسات</h4>
+      <ul>
+        <li><a href="#">سياسة الإرجاع</a></li>
+        <li><a href="#">الشحن والتوصيل</a></li>
+        <li><a href="#">الخصوصية</a></li>
+        <li><a href="#">الشروط والأحكام</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>تواصل معنا</h4>
+      <ul>
+        <li><a href="#">📞 967-XXX-XXXX</a></li>
+        <li><a href="#">💬 واتساب</a></li>
+        <li><a href="#">📧 info@yamoda.com</a></li>
+        <li><a href="#">⏰ ٩ص - ١٠م يومياً</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 يمودا. جميع الحقوق محفوظة | yamoda.com</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="#" class="whatsapp-float" title="تواصل عبر واتساب">💬</a>
+
+<!-- ORDER MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="order-modal" id="orderModal">
+    <div id="formContent">
+      <div class="modal-title">🛒 إتمام الطلب</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>الاسم الكامل</label>
+          <input type="text" placeholder="محمد أحمد">
+        </div>
+        <div class="form-group">
+          <label>رقم الهاتف</label>
+          <input type="text" placeholder="7XXXXXXXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>المحافظة</label>
+        <select>
+          <option>اختر المحافظة</option>
+          <option>صنعاء</option>
+          <option>عدن</option>
+          <option>تعز</option>
+          <option>الحديدة</option>
+          <option>إب</option>
+          <option>حضرموت</option>
+          <option>مأرب</option>
+          <option>ذمار</option>
+          <option>البيضاء</option>
+          <option>أبين</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>العنوان التفصيلي</label>
+        <input type="text" placeholder="الحي / الشارع / بجوار...">
+      </div>
+      <div class="form-group">
+        <label>طريقة الدفع</label>
+        <div class="payment-options">
+          
+          <div class="payment-option" onclick="selectPayment(this)">📱 كاش يمني</div>
+          <div class="payment-option" onclick="selectPayment(this)">🏦 تحويل بنكي</div>
+          <div class="payment-option" onclick="selectPayment(this)">💳 بطاقة</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>ملاحظات إضافية (اختياري)</label>
+        <textarea rows="2" placeholder="أي تفاصيل إضافية..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeModal()">إلغاء</button>
+        <button class="btn-primary" style="flex:2" onclick="submitOrder()">✅ تأكيد الطلب</button>
+      </div>
+    </div>
+    <div id="successContent" style="display:none" class="success-msg">
+      <div class="icon">✅</div>
+      <h3>تم استلام طلبك!</h3>
+      <p>شكراً لك! سنتواصل معك خلال ٢٤ ساعة لتأكيد الطلب وتفاصيل الدفع عبر واتساب.</p>
+      <br>
+      <button class="btn-primary" onclick="closeModal()" style="margin:0 auto">حسناً 👍</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// PRODUCTS DATA
+const products = [
+  { name: "فستان فلورال صيفي أنيق", price: 4500, old: 6000, discount: "25%", stars: 5, badge: "جديد", badgeClass: "new", bg: "bg1", icon: "👗" },
+  { name: "بلوزة كاجوال مريحة للبيت", price: 2800, old: 3800, discount: "26%", stars: 4, badge: "الأكثر طلباً", badgeClass: "", bg: "bg2", icon: "👚" },
+  { name: "جاكيت شتوي عصري دافئ", price: 8900, old: 12000, discount: "25%", stars: 5, badge: "hot", badgeClass: "hot", bg: "bg3", icon: "🧥" },
+  { name: "تنورة ميدي أنيقة للخروج", price: 3200, old: 4200, discount: "24%", stars: 4, badge: "", badgeClass: "", bg: "bg4", icon: "👘" },
+  { name: "طقم رياضي كامل مريح", price: 5500, old: 7000, discount: "21%", stars: 5, badge: "جديد", badgeClass: "new", bg: "bg5", icon: "🩳" },
+  { name: "حقيبة يد تصميم فاخر", price: 6200, old: 9000, discount: "31%", stars: 5, badge: "hot", badgeClass: "hot", bg: "bg6", icon: "👜" },
+  { name: "فستان سهرة راقٍ للمناسبات", price: 11000, old: 15000, discount: "27%", stars: 5, badge: "", badgeClass: "", bg: "bg7", icon: "👗" },
+  { name: "بنطلون جينز عصري مريح", price: 4800, old: 6500, discount: "26%", stars: 4, badge: "الأكثر طلباً", badgeClass: "", bg: "bg8", icon: "👖" }
+];
+
+function renderProducts() {
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = products.map(p => `
+    <div class="product-card">
+      <div class="product-img-placeholder ${p.bg}">
+        <span style="font-size:70px">${p.icon}</span>
+        ${p.badge ? `<div class="product-badge ${p.badgeClass}">${p.badge}</div>` : ''}
+        <div class="product-wishlist">🤍</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">${p.name}</div>
+        <div class="stars">${'★'.repeat(p.stars)}${'☆'.repeat(5-p.stars)}</div>
+        <div class="product-price-row">
+          <span class="product-price">${p.price.toLocaleString()} ريال</span>
+          <span class="product-old-price">${p.old.toLocaleString()}</span>
+          <span class="product-discount">-${p.discount}</span>
+        </div>
+        <button class="add-to-cart" onclick="openModal()">أضف للسلة 🛒</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+renderProducts();
+
+// COUNTDOWN
+let totalSecs = 8 * 3600 + 34 * 60 + 22;
+setInterval(() => {
+  if (totalSecs <= 0) return;
+  totalSecs--;
+  const h = Math.floor(totalSecs / 3600);
+  const m = Math.floor((totalSecs % 3600) / 60);
+  const s = totalSecs % 60;
+  document.getElementById('hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('secs').textContent = String(s).padStart(2,'0');
+}, 1000);
+
+// MODAL
+function openModal() {
+  document.getElementById('modalOverlay').classList.add('active');
+  document.getElementById('formContent').style.display = 'block';
+  document.getElementById('successContent').style.display = 'none';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+}
+
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+function submitOrder() {
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('successContent').style.display = 'block';
+}
+
+function selectPayment(el) {
+  document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+</script>
+</body>
+</html>
